@@ -18,7 +18,6 @@ from mediapipe.tasks.python import vision
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from config import FASE1, DEVICE, MODELOS_DIR, HAND_LANDMARKER_PATH
-from fase1_cnn.modelo import LSC_CNN
 from utils.crop_mano import recortar_crop
 
 
@@ -57,7 +56,8 @@ def cargar_modelo_entrenado(num_classes, modelo_path=None):
             "Ejecuta primero el entrenamiento."
         )
 
-    model = LSC_CNN(num_classes=num_classes, img_size=FASE1["img_size"]).to(DEVICE)
+    from fase1_cnn.modelo import crear_modelo
+    model = crear_modelo(num_classes=num_classes, img_size=FASE1["img_size"], device=DEVICE, freeze_backbone=False)
     model.load_state_dict(torch.load(modelo_path, map_location=DEVICE, weights_only=True))
     model.eval()
 
@@ -101,7 +101,7 @@ def predecir_imagen(model, imagen_path, nombres_clases, top_k=5):
     transform = transforms.Compose([
         transforms.Resize((FASE1["img_size"], FASE1["img_size"])),
         transforms.ToTensor(),
-        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     img_tensor = transform(img_input).unsqueeze(0).to(DEVICE)  # Agregar dimension de batch

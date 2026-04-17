@@ -6,14 +6,14 @@ from config import MODELOS_DIR  # noqa: E402
 
 CONTEXTO = "saludos"
 
-CLASES = ["HOLA", "BUENAS", "DIAS", "NOCHES", "TARDES"]
+CLASES = ["HOLA", "BUENAS", "TARDES", "NOCHES", "NOMBRE"]
 
 TRADUCCIONES_TTS = {
     "HOLA":   "hola",
     "BUENAS": "buenas",
-    "DIAS":   "días",
-    "NOCHES": "noches",
     "TARDES": "tardes",
+    "NOCHES": "noches",
+    "NOMBRE": "nombre",
 }
 
 

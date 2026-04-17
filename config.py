@@ -99,10 +99,10 @@ else:
 
 FASE1 = {
     "batch_size": _env_int("FASE1_BATCH_SIZE", 32),
-    "epochs": _env_int("FASE1_EPOCHS", 30),
-    "learning_rate": _env_float("FASE1_LR", 0.001),
-    "img_size": _env_int("FASE1_IMG_SIZE", 128),
-    "valid_split": _env_float("FASE1_VALID_SPLIT", 0.2),
+    "epochs": _env_int("FASE1_EPOCHS", 60),
+    "learning_rate": _env_float("FASE1_LR", 3e-4),
+    "img_size": _env_int("FASE1_IMG_SIZE", 224),   # requerido por MobileNetV3 preentrenado
+    "valid_split": _env_float("FASE1_VALID_SPLIT", 0.20),
     "modelo_path": os.path.join(MODELOS_DIR, "mejor_modelo_fase1.pth"),
     "clases_path": os.path.join(MODELOS_DIR, "clases_fase1.json"),
 }
