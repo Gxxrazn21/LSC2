@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Entornos virtuales
+.env/
+venv/
+venv_lsc/
+.venv/
+env/
+
+# Variables de entorno locales (mantener .env.example en el repo)
+.env
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Datasets (grandes, no deben ir a git)
+datasets/*/
+!datasets/.gitkeep
+
+# Modelos entrenados (grandes)
+modelos_guardados/*.pth
+modelos_guardados/*.pt
+
+# Resultados generados
+resultados/*.png
+resultados/*.txt
+
+# Archivos de MediaPipe (descargables)
+*.task
+*.tflite
+
+# Misc
+*.log
+.claude/

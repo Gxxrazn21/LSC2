@@ -1,0 +1,38 @@
+# =============================================================
+# REQUIREMENTS - Sistema de Reconocimiento LSC
+#
+# Entorno validado:
+#   Python 3.13.13 | torch 2.11 | mediapipe 0.10.33 | opencv 4.13
+#   numpy 2.4 | sklearn 1.8 | seaborn 0.13
+# Tambien compatible con Python 3.10 - 3.12.
+# =============================================================
+
+# --- Deep Learning ---
+torch>=2.3
+torchvision>=0.18
+torchaudio>=2.3
+
+# --- Procesamiento de datos ---
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+
+# --- Vision por computadora y graficos ---
+# IMPORTANTE: NO instalar "opencv-contrib-python" al mismo tiempo que "opencv-python".
+opencv-python>=4.10
+matplotlib>=3.8
+seaborn>=0.13
+Pillow>=10.2
+
+# --- MediaPipe (deteccion de manos y rostro) ---
+# 0.10.20+ soporta Python 3.13
+mediapipe>=0.10.20
+
+# --- Traduccion a voz y subtitulos ---
+pyttsx3>=2.90
+gTTS>=2.5
+SpeechRecognition>=3.10
+
+# --- Opcionales ---
+# pyaudio>=0.2.14      # requiere compilador en Windows (instalar con pipwin)
+# playsound==1.2.2     # 1.3.0 esta roto en Windows
